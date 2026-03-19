@@ -789,13 +789,12 @@ export default function DeployForm({ onDeployStarted }: Props) {
           <label>Container Image</label>
           <input
             type="text"
-            placeholder="quay.io/aicatalyst/openclaw:latest"
+            placeholder="ghcr.io/openclaw/openclaw:latest"
             value={config.image}
             onChange={(e) => update("image", e.target.value)}
           />
           <div className="hint">
-            Leave blank for the default image (quay.io/aicatalyst/openclaw:latest).
-            This image includes Anthropic Vertex AI support not yet available upstream.
+            Leave blank for the default image (ghcr.io/openclaw/openclaw:latest).
           </div>
         </div>
 

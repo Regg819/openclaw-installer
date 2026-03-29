@@ -547,7 +547,7 @@ export default function DeployForm({ onDeployStarted }: DeployFormProps) {
       prevAnthropicKeyRef.current = anthropicKeyForFetch;
       fetchAnthropicModelOptions();
     }
-  }, [anthropicKeyForFetch]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [anthropicKeyForFetch]);
 
   const openaiKeyForFetch = config.openaiApiKey.trim() || (defaults?.hasOpenaiKey ? "__env__" : "");
   const prevOpenaiKeyRef = useRef("");
@@ -556,7 +556,7 @@ export default function DeployForm({ onDeployStarted }: DeployFormProps) {
       prevOpenaiKeyRef.current = openaiKeyForFetch;
       fetchOpenaiModelOptions();
     }
-  }, [openaiKeyForFetch]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [openaiKeyForFetch]);
 
   const vertexCredsForFetch = (config.gcpServiceAccountJson || gcpDefaults?.hasServiceAccountJson ? "has-creds" : "")
     + "|" + (config.googleCloudProject || gcpDefaults?.projectId || "")
@@ -570,7 +570,7 @@ export default function DeployForm({ onDeployStarted }: DeployFormProps) {
       fetchVertexAnthropicModelOptions();
       fetchVertexGoogleModelOptions();
     }
-  }, [vertexCredsForFetch]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [vertexCredsForFetch]);
 
   const handleDeploy = async () => {
     if (!isValid) {
@@ -1140,7 +1140,6 @@ export default function DeployForm({ onDeployStarted }: DeployFormProps) {
           fetchModelEndpointOptions={fetchModelEndpointOptions}
           gcpDefaults={gcpDefaults}
           inferenceProvider={inferenceProvider}
-          isVertex={isVertex}
           loadingModelEndpointOptions={loadingModelEndpointOptions}
           mode={mode}
           modelEndpointOptions={modelEndpointOptions}

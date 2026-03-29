@@ -4,7 +4,6 @@ import {
   MODEL_DEFAULTS,
   MODEL_HINTS,
   PROVIDER_OPTIONS,
-  PROXY_MODEL_HINTS,
 } from "./constants.js";
 import type {
   DeployFormConfig,
@@ -20,7 +19,6 @@ interface ProviderSectionProps {
   fetchModelEndpointOptions: () => Promise<void>;
   gcpDefaults: GcpDefaults | null;
   inferenceProvider: InferenceProvider;
-  isVertex: boolean;
   loadingModelEndpointOptions: boolean;
   mode: string;
   modelEndpointOptions: ModelEndpointOption[];
@@ -63,7 +61,6 @@ export function ProviderSection({
   fetchModelEndpointOptions,
   gcpDefaults,
   inferenceProvider,
-  isVertex,
   loadingModelEndpointOptions,
   mode,
   modelEndpointOptions,
